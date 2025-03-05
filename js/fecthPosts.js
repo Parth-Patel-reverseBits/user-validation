@@ -1,4 +1,8 @@
 async function getData() {
+  localStorage.removeItem("email");
+  localStorage.removeItem("password");
+  localStorage.removeItem("name");
+
   const url = "https://jsonplaceholder.typicode.com/posts";
   try {
     const response = await fetch(url);
@@ -15,7 +19,6 @@ async function getData() {
 getData();
 
 const addingDataOnTable = (array) => {
-  console.log(array);
   let tableBody = document.getElementById("table-body");
   let text = "";
   for (let data of array) {
@@ -23,3 +26,12 @@ const addingDataOnTable = (array) => {
   }
   tableBody.innerHTML = text;
 };
+
+const checkToken = () => {
+  if (localStorage.getItem("token") == null) {
+    window.history.back();
+  }
+};
+setInterval(() => {
+  checkToken(); // Check if the token is deleted
+}, 500); // Adjust the interval as needed
