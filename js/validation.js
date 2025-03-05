@@ -1,5 +1,6 @@
 localStorage.setItem("email", "parth.patel.reversebits@gmail.com");
 localStorage.setItem("password", "reverseBits");
+localStorage.setItem("token", (Math.random() * 10).toString().replace(".", ""));
 
 const userValidation = () => {
   let flag = null;
