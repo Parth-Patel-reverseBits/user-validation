@@ -29,3 +29,9 @@
   /* height: 10%; */
   /* border: 2px solid red; */
 }
+
+@media (min-width: 992px) {
+  .custom-section-height {
+    height: 100vh;
+  }
+}
