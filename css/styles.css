@@ -1,3 +1,7 @@
+/* body {
+  overflow: hidden;
+} */
+
 .divider:after,
 .divider:before {
   content: "";
@@ -5,11 +9,23 @@
   height: 1px;
   background: #eee;
 }
-.h-custom {
-  height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .h-custom {
     height: 100%;
   }
+} */
+
+.custom-border {
+  border: 2px solid red;
+  /* height: 100%; */
+}
+
+.main-custom-height {
+  height: 90%;
+  /* border: 2px solid red; */
+}
+
+.footer-custom-height {
+  /* height: 10%; */
+  /* border: 2px solid red; */
 }
