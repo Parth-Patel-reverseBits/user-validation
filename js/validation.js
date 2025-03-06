@@ -15,7 +15,8 @@ const userValidation = () => {
     if (flag) {
       document.getElementById("success-validation-msg").style.display = "block";
       document.getElementById("invalid-validation-msg").style.display = "none";
-
+      password.value = "";
+      emailAddress.value = "";
       setTimeout(function () {
         window.location.href = "/home.html";
       }, 1000);
