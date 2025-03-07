@@ -1,7 +1,3 @@
-let perons = { name: "Parth Patel", age: 20 };
 
-function myFunc(obj) {
-  console.log(obj);
-}
-
-myFunc(perons);
+let data = [10,20,30,40,50]
+console.log(data.findIndex((item)=> item === 50 ))

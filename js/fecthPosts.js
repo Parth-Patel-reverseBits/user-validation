@@ -36,7 +36,7 @@ const addingDataOnTable = (array) => {
 
   for (let data of array) {
     // console.log(data);
-    text += `<tr id='${data.id}' > <td>${data.userId}</td> <td>${data.id}</td> <td>${data.title}</td> <td>${data.body}</td> <td> <span onclick="updateData(${data.userId}, ${data.id}, '${data.title}' )" data-bs-toggle="modal" data-bs-target='#exampleModal'  style='cursor: pointer;'> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square " viewBox="0 0 16 16">
+    text += `<tr id='${data.id}' > <td>${data.userId}</td> <td>${data.id}</td> <td>${data.title}</td> <td>${data.body}</td> <td> <span onclick="updateData(${data.userId},${data.id},'${data.title.replaceAll("\n", " ")}', '${data.body.replaceAll("\n", " ")}')" data-bs-toggle="modal" data-bs-target='#exampleModal'  style='cursor: pointer;'> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square " viewBox="0 0 16 16">
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
     </svg> </span> <span onclick='deleteData(${data.id})' data-bs-toggle="modal" data-bs-target='#deleteModal' style='cursor: pointer;'> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -78,7 +78,7 @@ const deleteData = (id) => {
 };
 const deleteModelButton = () => {
   // console.log("Called from delete function");
-  fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  fetch(`https://jsonplaceholder.typicode.com/posts/${deleteRecordId}`, {
     method: "DELETE",
   });
   const isObject = (value) => value !== null && typeof value === "object";
@@ -91,10 +91,42 @@ const deleteModelButton = () => {
 };
 
 // update user data
-const updateData = (userId, id, title) => {
-  console.log(userId, id, title);
+
+let updateUserData = {}
+const updateData = (userId, id, title, body) => {
+
+  updateUserData["userId"] = userId;
+  updateUserData["id"] = id;
+  updateUserData["title"] = title;
+  updateUserData["body"] = body;
+
   document.getElementById("recipient-name").value = userId;
   document.getElementById("message-text").value = id;
   document.getElementById("message-title").value = title;
-  // document.getElementById("message-body").value = body;
+  document.getElementById("message-body").value = body;
+
 };
+
+const userOnchangeData = () => {
+  console.log("Continouely working")
+  console.log(document.getElementById(`${updateUserData.id}`))
+}
+
+const realDataUpdate = () => {
+  // console.log(document.getElementById(`${updateUserData.id}`))
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${updateUserData.id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      userId: updateUserData.userId,
+      id: updateUserData.id,
+      title: updateUserData.title,
+      body: updateUserData.body
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }) 
+  
+  
+}
