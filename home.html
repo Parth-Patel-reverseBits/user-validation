@@ -96,7 +96,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label">Id:</label>
-                  <input type="text" class="form-control" id="add-text" />
+                  <input type="text" placeholder="id should be a numebr" class="form-control" id="add-text" />
                 </div>
                 <div class="mb-3">
                   <label for="message-title" class="col-form-label"
@@ -119,7 +119,7 @@
                 Close
               </button>
               <button
-                onclick="addUserData()"
+                onclick="addData()"
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
@@ -162,7 +162,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label">Id:</label>
-                  <input type="text" class="form-control" id="message-text" />
+                  <input type="text" placeholder="id should be a number" class="form-control" id="message-text" />
                 </div>
                 <div class="mb-3">
                   <label for="message-title" class="col-form-label"
@@ -172,7 +172,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="message-body" class="col-form-label">Body:</label>
-                  <input oninput="userOnchangeData()" type="text" class="form-control" id="message-body" />
+                  <input type="text" class="form-control" id="message-body" />
                 </div>
               </form>
             </div>
@@ -184,7 +184,7 @@
               >
                 Close
               </button>
-              <button data-bs-dismiss="modal" onclick="realDataUpdate()" type="button" class="btn btn-primary">
+              <button onclick="updateData()" data-bs-dismiss="modal" type="button" class="btn btn-primary">
                 Save Changes
               </button>
             </div>
@@ -227,7 +227,7 @@
                 Close
               </button>
               <button
-                onclick="deleteModelButton()"
+                onclick="callDeleteData()"
                 type="button"
                 data-bs-dismiss="modal"
                 class="btn btn-danger"
