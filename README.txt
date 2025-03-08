@@ -16,57 +16,57 @@ This is a beautifully crafted web application that ensures secure user authentic
 
 ✏️ CRUD Operations:
 
-Add ➕ new data entries.
+-  Add ➕ new data entries.
 
-Update 🔄 existing records.
+-  Update 🔄 existing records.
 
-Delete ❌ unwanted entries.
+-  Delete ❌ unwanted entries.
 
-🌐 JSONPlaceholder Integration: The app utilizes the JSONPlaceholder API, allowing temporary data modifications. Please note: changes are not persistent and will reset upon page reload.
+-  🌐 JSONPlaceholder Integration: The app utilizes the JSONPlaceholder API, allowing temporary data modifications. Please note: changes are not persistent and will reset upon page reload.
 
-🚀 Hosted on Vercel: The app is seamlessly deployed and accessible anytime, anywhere.
+-  🚀 Hosted on Vercel: The app is seamlessly deployed and accessible anytime, anywhere.
 
 🏁 How It Works
 
 Login Page:
 
-Users enter their credentials.
+-  Users enter their credentials.
 
-Upon successful authentication, a session token is generated.
+-  Upon successful authentication, a session token is generated.
 
 Home Page:
 
-Displays a dynamic data table.
+-  Displays a dynamic data table.
 
-Users can perform Add, Update, and Delete actions.
+-  Users can perform Add, Update, and Delete actions.
 
 Session Management:
 
-If the session token is deleted or expires, the user is immediately redirected to the Login Page.
+-  If the session token is deleted or expires, the user is immediately redirected to the Login Page.
 
 Data Handling:
 
-All CRUD operations interact with JSONPlaceholder.
+-  All CRUD operations interact with JSONPlaceholder.
 
 Data resets on page reload.
 
-🌍 Deployment
+-  🌍 Deployment
 
-The application is proudly hosted on Vercel. Check it out live: [Your Vercel Link Here] 🚀
+-  The application is proudly hosted on Vercel. Check it out live: [Your Vercel Link Here] 🚀
 
 🛠️ Technologies Used
 
-HTML5 & CSS3 🎨
+-  HTML5 & CSS3 🎨
 
-JavaScript ⚡
+-  JavaScript ⚡
 
-Bootstrap 📲
+-  Bootstrap 📲
 
-Responsive Design 📱
+-  Responsive Design 📱
 
-JSONPlaceholder API 📡
+-  JSONPlaceholder API 📡
 
-Vercel 🌐
+-  Vercel 🌐
 
 Thank you for exploring this project! 😊 Feel free to contribute or share your feedback.
 
